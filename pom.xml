@@ -135,6 +135,15 @@
             <!-- Diğer eklentiler -->
 
         </plugins>
+             <configuration>
+    <projectName>Proje Adı</projectName>
+    <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+    <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+    <jsonFiles>
+        <param>**/*.json</param>
+    </jsonFiles>
+</configuration>
+
     </build>
     <!-- Diğer etiketler -->
 </project>
