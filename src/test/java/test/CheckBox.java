@@ -13,7 +13,7 @@ public class CheckBox {
 
         cdriver.get("https://demoqa.com/checkbox");
       String homeboxCssValue = "#tree-node > ol > li > span > label > span.rct-checkbox > svg";
-        WebElement homebox = cdriver.findElement(By.cssSelector(homeboxCssValue));
+        WebElement homebox = cdriver.findElement(By.cssSelector(homeboxue));
         homebox.click();
 
         homebox = cdriver.findElement(By.cssSelector(homeboxCssValue));
