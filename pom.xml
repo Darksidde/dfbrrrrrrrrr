@@ -89,10 +89,18 @@
             </plugin>
 
             <!-- Maven Cucumber Reporting Plugin -->
-            <plugin>
+                <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <version>5.0.0</version>
+                <configuration>
+                    <projectName>Proje Adı</projectName>
+                    <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+                    <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                    <jsonFiles>
+                        <param>**/*.json</param>
+                    </jsonFiles>
+                </configuration>
                 <executions>
                     <execution>
                         <id>execution</id>
@@ -100,49 +108,11 @@
                         <goals>
                             <goal>generate</goal>
                         </goals>
-                        <configuration>
-                            <projectName>maximumautomation</projectName>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                            <jsonFiles>
-                                <param>**/*.json</param>
-                            </jsonFiles>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- Test sınıflarını src/test/java klasöründe bulundurduğunuzu belirten eklenti -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.2.0</version>
-                <executions>
-                    <execution>
-                        <id>add sources</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>add-test-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/test/java</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- Diğer eklentiler -->
 
         </plugins>
-             <configuration>
-    <projectName>Proje Adı</projectName>
-    <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-    <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-    <jsonFiles>
-        <param>**/*.json</param>
-    </jsonFiles>
-</configuration>
 
     </build>
     <!-- Diğer etiketler -->
