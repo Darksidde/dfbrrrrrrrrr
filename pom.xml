@@ -1,5 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.example</groupId>
     <artifactId>Selenium</artifactId>
@@ -51,9 +52,8 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>6.8.1</version>
+            <scope>test</scope>
         </dependency>
-
-        <!-- ... Diğer bağımlılıklar ... -->
     </dependencies>
 
     <build>
@@ -62,9 +62,7 @@
 
         <plugins>
             <!-- Spring Boot Maven Plugin -->
-            <plugin>
-                <!-- Spring Boot Plugin -->
-            </plugin>
+            <!-- Bu eklentiyi buraya ekleyin -->
 
             <!-- Maven Compiler Plugin -->
             <plugin>
@@ -114,6 +112,7 @@
                 </executions>
             </plugin>
 
+            <!-- Test sınıflarını src/test/java klasöründe bulundurduğunuzu belirten eklenti -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -127,16 +126,14 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>Source</source>
+                                <source>src/test/java</source>
                             </sources>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-            <!-- Build Helper Maven Plugin -->
-            <plugin>
-                <!-- Build Helper Maven Plugin -->
-            </plugin>
+            <!-- Diğer eklentiler -->
+
         </plugins>
     </build>
     <!-- Diğer etiketler -->
